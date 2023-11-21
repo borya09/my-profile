@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import macFetcher from "../services/macFetcher";
-import { PublicProfile } from "../models/PublicProfile";
+import { PublicProfile } from "../../../models/PublicProfile";
+import macFetcher from "../../../services/macFetcher";
 
 export default function useFetchPublicProfile() {
   const [publicProfile, setPublicProfile] = useState<

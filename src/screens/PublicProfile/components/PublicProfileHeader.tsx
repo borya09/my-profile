@@ -4,34 +4,20 @@ import { StyleSheet, Text, View, Image } from "react-native";
 type ProfileHeaderProps = {
   name: string;
   surnames: string[];
-  avatarUrl: string | undefined;
   city: string | undefined;
 };
 
 export default function PublicProfile({
   name,
   surnames,
-  avatarUrl,
-  city
+  city,
 }: ProfileHeaderProps) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container}>     
       <Text>
         {name} {surnames.join(" ")}
       </Text>
-      {avatarUrl && (
-        <Image
-          style={styles.avatar}
-          source={{
-            uri: avatarUrl,
-          }}
-        />
-      )}
-      {city && (
-        <Text>
-          {city}
-        </Text>
-      )}
+      {city && <Text>{city}</Text>}
     </View>
   );
 }
@@ -42,9 +28,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  avatar: {
-    width: 66,
-    height: 58,
   },
 });
