@@ -1,8 +1,8 @@
 export const globalStyles = {
-  Dark : {
+  Dark: {
     Background: "#121212",
   },
-  Light : {
+  Light: {
     Background: "#fff",
-  }
-}
+  },
+};
