@@ -1,15 +1,15 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import ProfileDescription from "./components/PublicProfileDescription";
 import ProfileHeader from "./components/PublicProfileHeader";
 import useFetchPublicProfile from "./hooks/useFetchPublicProfile";
 import PublicProfileClaim from "./components/PublicProfileClaim";
+import Error from "../../components/Error";
 
 export default function PublicProfile() {
-  const { publicProfile, loading, error } = useFetchPublicProfile();
+  const { publicProfile, error } = useFetchPublicProfile();
 
-  if (loading) return <ActivityIndicator size="large" />;
-  if (error || !publicProfile) return "error while loading public profile";
+  if (error || !publicProfile) return <Error>Error while loading public profile</Error>;
 
   return (
     <ScrollView>

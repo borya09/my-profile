@@ -22,6 +22,7 @@ export default function Avatar({
   avatarUrl,
   style,
 }: AvatarProps) {
+
   return (
     <View style={[styles.avatar, style]}>
       <Text style={styles.initials}>

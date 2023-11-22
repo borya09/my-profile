@@ -11,6 +11,8 @@ type CityProps = {
 export default function City({ city, blurRadius, style }: CityProps) {
   const { url } = useFetchCityUrl(city);
 
+  if (!url) return;
+
   return (
     <View style={[styles.container, style]}>
       <Image
