@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import AppText from "../../../components/AppText";
 
 type ProfileDescriptionProps = {
   description: string;
@@ -10,7 +11,7 @@ export default function ProfileDescription({
 }: ProfileDescriptionProps) {
   return (
     <View style={styles.container}>
-      <Text>{description}</Text>
+      <AppText>{description}</AppText>
     </View>
   );
 }
@@ -18,7 +19,6 @@ export default function ProfileDescription({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },

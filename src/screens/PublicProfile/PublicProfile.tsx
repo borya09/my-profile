@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  ActivityIndicator,
-  Appearance,
-  StyleSheet,
-  View,
-  ScrollView,
-} from "react-native";
-import Avatar from "../../components/Avatar";
-import City from "../../components/City";
-import { globalStyles } from "../../styles/globalStyles";
+import { ActivityIndicator, StyleSheet, View, ScrollView } from "react-native";
 import ProfileDescription from "./components/PublicProfileDescription";
 import ProfileHeader from "./components/PublicProfileHeader";
 import useFetchPublicProfile from "./hooks/useFetchPublicProfile";
-
-const colorScheme = Appearance.getColorScheme();
+import PublicProfileClaim from "./components/PublicProfileClaim";
 
 export default function PublicProfile() {
   const { publicProfile, loading, error } = useFetchPublicProfile();
@@ -23,62 +13,33 @@ export default function PublicProfile() {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
-        {publicProfile.city && (
-          <City city={publicProfile.city} blurRadius={3} style={styles.city} />
-        )}
-        <View
-          style={[
-            styles.content,
-            publicProfile.city ? styles.contentWithCity : undefined,
-          ]}
-        >
-          {publicProfile.avatarUrl && (
-            <Avatar
-              avatarUrl={publicProfile.avatarUrl}
-              size="big"
-              style={[styles.avatar]}
-            />
-          )}
-          <ProfileHeader {...publicProfile} />
-          {publicProfile.description && (
-            <ProfileDescription description={publicProfile.description} />
-          )}
-        </View>
+      <ProfileHeader
+        avatarUrl={publicProfile.avatarUrl}
+        city={publicProfile.city}
+        name={publicProfile.name}
+        surnames={publicProfile.surnames}
+      />
+      <View style={styles.content}>
+        <PublicProfileClaim
+          name={publicProfile.name}
+          surnames={publicProfile.surnames}
+          title={publicProfile.title}
+        />
+        {publicProfile.description && (
+          <ProfileDescription description={publicProfile.description} />
+        )}       
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    backgroundColor:
-      colorScheme === "dark"
-        ? globalStyles.Dark.Background
-        : globalStyles.Light.Background,
-  },
-  city: {
-    height: 300,
-    zIndex: 1,
-  },
   content: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 2,
-    padding: 20,
-  },
-  contentWithCity: {
-    transform: [{ translateY: -200 }],
-  },
-  avatar: {
-    marginTop: 20,
-    marginBottom: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
 });
