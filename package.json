@@ -11,9 +11,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "start-test-server": "npx expo export -p web && npx serve dist --single -p 19006",
+    "start-test-server": "npx expo export -p web && npx serve dist --single -p 8081",
     "test": "npx playwright test",
-    "test:ci": "start-server-and-test start-test-server http://localhost:19006 test"
+    "test:ci": "start-server-and-test start-test-server http://localhost:8081 test"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",

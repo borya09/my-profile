@@ -5,6 +5,7 @@ test("Public Profile has about me info", async ({ page }) => {
 
   await expect(page.getByText("Borja Andrés Marroquín")).toBeVisible();
   await expect(page.getByText("SOFTWARE ENGINEER")).toBeVisible();
+  // await expect(page.getByTestId("contacticon-bilbao")).toBeVisible();
   await expect(
     page.getByText("Varios años de experiencia en desarrollo de")
   ).toBeVisible();

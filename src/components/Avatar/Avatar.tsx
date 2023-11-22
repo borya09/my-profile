@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: 200,
     borderColor: globalStyles.background,
     borderWidth: 8,
-    backgroundColor: "#FFD601",
+    backgroundColor: globalStyles.accent,
     overflow: "hidden",
   },
   initials: {

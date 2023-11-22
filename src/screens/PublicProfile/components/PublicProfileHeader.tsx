@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   fallback: {
-    backgroundColor: "#6C48EF",
+    backgroundColor: "#37C3FF",
   },
   avatar: {
     position: "relative",

@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Image, ImageStyle, StyleProp, View } from "react-native";
 import useFetchCityUrl from "./hooks/useFetchCityUrl";
+import { globalStyles } from "../../styles/globalStyles";
 
 type CityProps = {
   city: string;
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     zIndex: 1,
-    backgroundColor: "#6C48EF",
+    backgroundColor: globalStyles.accent,
     opacity: 0.3,
   },
   city: {

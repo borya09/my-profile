@@ -1,12 +1,8 @@
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import { StyleSheet, Text } from "react-native";
 import { globalStyles } from "../../styles/globalStyles";
 
-interface ErrorProps {
-  children: ReactNode;
-}
-
-export default function Error({ children }: ErrorProps) {
+export default function Error({ children }: PropsWithChildren) {
   return <Text style={styles.text}>{children}</Text>;
 }
 

@@ -9,7 +9,9 @@ import Error from "../../components/Error";
 export default function PublicProfile() {
   const { publicProfile, error } = useFetchPublicProfile();
 
-  if (error || !publicProfile) return <Error>Error while loading public profile</Error>;
+  if (error) return <Error>Error while loading public profile</Error>;
+
+  if (!publicProfile) return;
 
   return (
     <ScrollView>
@@ -24,10 +26,11 @@ export default function PublicProfile() {
           name={publicProfile.name}
           surnames={publicProfile.surnames}
           title={publicProfile.title}
+          contacts={publicProfile.contacts}
         />
         {publicProfile.description && (
           <ProfileDescription description={publicProfile.description} />
-        )}       
+        )}
       </View>
     </ScrollView>
   );

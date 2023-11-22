@@ -1,3 +1,10 @@
+import { ContactType } from "./ContactType";
+
+export interface PublicProfileContact {
+  type: ContactType;
+  url: string;
+}
+
 export interface PublicProfile {
   name: string;
   surnames: string;
@@ -5,4 +12,5 @@ export interface PublicProfile {
   city: string | undefined;
   title: string;
   description: string | undefined;
+  contacts: PublicProfileContact[];
 }

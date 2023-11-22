@@ -1,13 +1,12 @@
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
 import { globalStyles } from "../../styles/globalStyles";
 
 interface AppTextProps {
-  children: ReactNode;
   style?: StyleProp<TextStyle>;
 }
 
-export default function AppText({ children, style }: AppTextProps) {
+export default function AppText({ children, style }: PropsWithChildren<AppTextProps>) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
