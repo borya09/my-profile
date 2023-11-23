@@ -32,9 +32,10 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   skill: {
-    backgroundColor: globalStyles.accent,
     paddingVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 4,
+    backgroundColor: globalStyles.accent,
+    color: globalStyles.accentContrast,
   },
 });
