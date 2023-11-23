@@ -22,13 +22,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.borya09.myprofile"
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "sdkVersion": "49.0.0"
+    "sdkVersion": "49.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "4234c0d3-7402-445a-8f06-be60f2dd248f"
+      }
+    },
+    "owner": "borya09"
   },
   "name": "my-profile"
 }
