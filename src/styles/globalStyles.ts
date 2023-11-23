@@ -28,4 +28,5 @@ const LightTheme: ColorSchemeTheme = {
 
 export const globalStyles = {
   ...(colorScheme === "dark" ? DarkTheme : LightTheme),
+  borderRadius: 4,
 };

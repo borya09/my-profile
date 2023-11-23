@@ -10,7 +10,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "BigShouldersDisplay": require("./assets/fonts/BigShouldersDisplay-Medium.ttf"),
+    BigShouldersDisplay: require("./assets/fonts/BigShouldersDisplay-Medium.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -22,16 +22,17 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <SpinnerProvider>
+    <SpinnerProvider>
+      <View style={styles.container} onLayout={onLayoutRootView}>
         <PublicProfile />
-      </SpinnerProvider>
-    </View>
+      </View>
+    </SpinnerProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "100%",
     backgroundColor: globalStyles.background,
   },

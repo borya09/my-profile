@@ -6,6 +6,7 @@ import useFetchPublicProfile from "./hooks/useFetchPublicProfile";
 import PublicProfileClaim from "./components/PublicProfileClaim";
 import Error from "../../components/Error";
 import PublicProfileSkills from "./components/PublicProfileSkills";
+import PublicProfileExperience from "./components/PublicProfileJobs";
 
 export default function PublicProfile() {
   const { publicProfile, error } = useFetchPublicProfile();
@@ -35,6 +36,9 @@ export default function PublicProfile() {
         {publicProfile.skills.length && (
           <PublicProfileSkills skills={publicProfile.skills} />
         )}
+        {publicProfile.jobs.length && (
+          <PublicProfileExperience jobs={publicProfile.jobs} />
+        )}
       </View>
     </ScrollView>
   );
@@ -42,11 +46,7 @@ export default function PublicProfile() {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingBottom: 20,
   },
 });

@@ -2,13 +2,13 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import Text from "../../../components/Text";
 import ContactIcon from "../../../components/ContactIcon";
-import { PublicProfileContact } from "../../../models/PublicProfile";
+import { Contact } from "../../../models/Contact";
 
 type PublicProfileClaimProps = {
   name: string;
   surnames: string;
   title: string;
-  contacts: PublicProfileContact[];
+  contacts: Contact[];
 };
 
 export default function PublicProfileClaim({

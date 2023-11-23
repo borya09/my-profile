@@ -7,3 +7,8 @@ export type ContactType =
   | "mail"
   | "phone"
   | "other";
+
+export interface Contact {
+  type: ContactType;
+  url: string;
+}

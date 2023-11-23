@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import Text from "../../../components/Text";
 import Section from "../../../components/Section";
-import { globalStyles } from "../../../styles/globalStyles";
+import Badge from "../../../components/Badge";
 
 type PublicProfileSkillsProps = {
   skills: string[];
@@ -15,9 +14,7 @@ export default function PublicProfileSkills({
     <Section title="Skills">
       <View style={styles.container}>
         {skills.map((s) => (
-          <Text key={s} style={styles.skill}>
-            {s}
-          </Text>
+          <Badge key={s}>{s}1</Badge>
         ))}
       </View>
     </Section>
@@ -30,12 +27,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 10,
-  },
-  skill: {
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    borderRadius: 4,
-    backgroundColor: globalStyles.accent,
-    color: globalStyles.accentContrast,
   },
 });

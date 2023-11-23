@@ -1,9 +1,5 @@
-import { ContactType } from "./ContactType";
-
-export interface PublicProfileContact {
-  type: ContactType;
-  url: string;
-}
+import { Contact } from "./Contact";
+import { Job } from "./Job";
 
 export interface PublicProfile {
   name: string;
@@ -12,6 +8,7 @@ export interface PublicProfile {
   city: string | undefined;
   title: string;
   description: string | undefined;
-  contacts: PublicProfileContact[];
+  contacts: Contact[];
   skills: string[];
+  jobs: Job[];
 }

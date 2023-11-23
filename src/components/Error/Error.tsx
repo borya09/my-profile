@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "#f4c7c7",
     backgroundColor: globalStyles.error,
-    borderRadius: 4,
+    borderRadius: globalStyles.borderRadius,
     fontSize: 18,
   },
 });

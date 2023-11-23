@@ -1,4 +1,9 @@
-import React, { useState, useContext, PropsWithChildren } from "react";
+import React, {
+  useState,
+  useContext,
+  PropsWithChildren,
+  useCallback,
+} from "react";
 import { View, StyleSheet } from "react-native";
 import Spinner from "../components/Spinner";
 
@@ -13,13 +18,13 @@ export const useSpinner = () => useContext(SpinnerContext);
 export const SpinnerProvider = ({ children }: PropsWithChildren<unknown>) => {
   const [show, setShow] = useState<boolean>(false);
 
-  const showSpinner = () => {
+  const showSpinner = useCallback(() => {
     setShow(true);
-  };
+  }, []);
 
-  const hideSpinner = () => {
+  const hideSpinner = useCallback(() => {
     setShow(false);
-  };
+  }, []);
 
   return (
     <SpinnerContext.Provider value={{ showSpinner, hideSpinner }}>
@@ -32,7 +37,7 @@ export const SpinnerProvider = ({ children }: PropsWithChildren<unknown>) => {
 };
 
 const styles = StyleSheet.create({
-  container: {    
+  container: {
     width: "100%",
     height: "100%",
   },

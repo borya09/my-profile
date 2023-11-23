@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Linking, Pressable } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { globalStyles } from "../../styles/globalStyles";
-import { ContactType } from "../../models/ContactType";
+import { ContactType } from "../../models/Contact";
 
 const mapToIonicons = (icon: ContactType): typeof Ionicons.defaultProps => {
   switch (icon) {
@@ -31,17 +31,13 @@ type ContactIconProps = {
 };
 
 export default function ContactIcon({ icon, url }: ContactIconProps) {
-  const open = useCallback(() => {
-    Linking.openURL(url);
-  }, [url]);
-
   return (
-    <Pressable  onPress={open}>
+    <Pressable onPress={() => Linking.openURL(url)}>
       <Ionicons
         name={mapToIonicons(icon)}
         size={24}
         color={globalStyles.accent}
       />
-    </Pressable >
+    </Pressable>
   );
 }
