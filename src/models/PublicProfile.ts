@@ -13,4 +13,5 @@ export interface PublicProfile {
   title: string;
   description: string | undefined;
   contacts: PublicProfileContact[];
+  skills: string[];
 }

@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textTransform: "uppercase",    
     fontFamily: "BigShouldersDisplay",
-    marginBottom: 10,
+    marginVertical: 10,
   },
 });

@@ -5,6 +5,7 @@ import ProfileHeader from "./components/PublicProfileHeader";
 import useFetchPublicProfile from "./hooks/useFetchPublicProfile";
 import PublicProfileClaim from "./components/PublicProfileClaim";
 import Error from "../../components/Error";
+import PublicProfileSkills from "./components/PublicProfileSkills";
 
 export default function PublicProfile() {
   const { publicProfile, error } = useFetchPublicProfile();
@@ -30,6 +31,9 @@ export default function PublicProfile() {
         />
         {publicProfile.description && (
           <ProfileDescription description={publicProfile.description} />
+        )}
+        {publicProfile.skills.length && (
+          <PublicProfileSkills skills={publicProfile.skills} />
         )}
       </View>
     </ScrollView>
