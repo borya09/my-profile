@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Linking, TouchableOpacity } from "react-native";
+import { Linking, Pressable } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { globalStyles } from "../../styles/globalStyles";
 import { ContactType } from "../../models/ContactType";
@@ -36,12 +36,12 @@ export default function ContactIcon({ icon, url }: ContactIconProps) {
   }, [url]);
 
   return (
-    <TouchableOpacity onPress={open}>
+    <Pressable  onPress={open}>
       <Ionicons
         name={mapToIonicons(icon)}
         size={24}
         color={globalStyles.accent}
       />
-    </TouchableOpacity>
+    </Pressable >
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import AppText from "../../../components/AppText";
+import Text from "../../../components/Text";
 import ContactIcon from "../../../components/ContactIcon";
 import { PublicProfileContact } from "../../../models/PublicProfile";
 
@@ -19,10 +19,10 @@ export default function PublicProfileClaim({
 }: PublicProfileClaimProps) {
   return (
     <View style={styles.container}>
-      <AppText style={styles.name}>
+      <Text style={styles.name}>
         {name} {surnames}
-      </AppText>
-      <AppText style={styles.title}>{title}</AppText>
+      </Text>
+      <Text style={styles.title}>{title}</Text>
       <View style={styles.contacts}>
         {contacts.map((c) => (
           <ContactIcon icon={c.type} url={c.url} key={c.url} />

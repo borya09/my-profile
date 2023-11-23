@@ -22,7 +22,6 @@ export default function Avatar({
   avatarUrl,
   style,
 }: AvatarProps) {
-
   return (
     <View style={[styles.avatar, style]}>
       <Text style={styles.initials}>
@@ -66,7 +65,5 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    width: 250,
-    height: 250,
   },
 });

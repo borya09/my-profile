@@ -30,12 +30,13 @@ export default function PublicProfile({
   );
 }
 
-const translateY = 70;
+const height = 240;
+const translateY = height / 2;
 
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 240,
+    height: height,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
