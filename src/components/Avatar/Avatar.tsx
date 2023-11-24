@@ -1,13 +1,11 @@
 import React from "react";
-import {
-  StyleSheet,
-  Image,
-  StyleProp,
-  ImageStyle,
-  View,
-  Text,
-} from "react-native";
+import { StyleSheet, View, StyleProp, ImageStyle, Text } from "react-native";
 import { globalStyles } from "../../styles/globalStyles";
+import Animated, {
+  withSpring,
+  useSharedValue,
+  withDelay,
+} from "react-native-reanimated";
 
 type AvatarProps = {
   name: string;
@@ -16,12 +14,25 @@ type AvatarProps = {
   style?: StyleProp<ImageStyle>;
 };
 
+const size: number = 250;
+const avatarDelayMs: number = 1500;
+const avatarAnimationMs: number = 5000;
+
 export default function Avatar({
   name,
   surnames,
   avatarUrl,
   style,
 }: AvatarProps) {
+  const animatedSize = useSharedValue(0);
+
+  const avatarLoaded = () => {
+    animatedSize.value = withDelay(
+      avatarDelayMs,
+      withSpring(animatedSize.value + size, { duration: avatarAnimationMs })
+    );
+  };
+
   return (
     <View style={[styles.avatar, style]}>
       <Text style={styles.initials}>
@@ -29,8 +40,9 @@ export default function Avatar({
         {surnames[0]}
       </Text>
       {avatarUrl && (
-        <Image
-          style={styles.image}
+        <Animated.Image
+          style={{ ...styles.image, width: animatedSize, height: animatedSize }}
+          onLoad={avatarLoaded}
           source={{
             uri: avatarUrl,
           }}
@@ -45,9 +57,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    width: 250,
-    height: 250,
-    borderRadius: 200,
+    width: size,
+    height: size,
+    borderRadius: size / 2,
     borderColor: globalStyles.background,
     borderWidth: 8,
     backgroundColor: globalStyles.accent,
@@ -61,9 +73,6 @@ const styles = StyleSheet.create({
   },
   image: {
     position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    borderRadius: size / 2,
   },
 });
