@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
-import { globalStyles } from "../../styles/globalStyles";
+import { Theme } from "../../styles/theme";
 
 interface TitleProps {
   style?: StyleProp<TextStyle>;
@@ -15,7 +15,7 @@ export default function Title({
 
 const styles = StyleSheet.create({
   text: {
-    color: globalStyles.color,
+    color: Theme.color,
     fontSize: 25,
     textTransform: "uppercase",    
     fontFamily: "BigShouldersDisplay",

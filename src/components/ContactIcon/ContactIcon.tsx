@@ -1,7 +1,7 @@
 import React from "react";
 import { Linking, Pressable } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { globalStyles } from "../../styles/globalStyles";
+import { Theme } from "../../styles/theme";
 import { ContactType } from "../../models/Contact";
 
 const mapToIonicons = (icon: ContactType): typeof Ionicons.defaultProps => {
@@ -36,7 +36,7 @@ export default function ContactIcon({ icon, url }: ContactIconProps) {
       <Ionicons
         name={mapToIonicons(icon)}
         size={24}
-        color={globalStyles.accent}
+        color={Theme.accent}
       />
     </Pressable>
   );

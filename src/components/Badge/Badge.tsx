@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
-import { globalStyles } from "../../styles/globalStyles";
+import { Theme } from "../../styles/theme";
 
 interface BadgeProps {
   style?: StyleProp<TextStyle>;
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   badge: {
     paddingVertical: 4,
     paddingHorizontal: 8,
-    borderRadius: globalStyles.borderRadius,
-    backgroundColor: globalStyles.accent,
-    color: globalStyles.accentContrast,
+    borderRadius: Theme.borderRadius,
+    backgroundColor: Theme.accent,
+    color: Theme.accentContrast,
   },
 });

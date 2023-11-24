@@ -26,7 +26,7 @@ const LightTheme: ColorSchemeTheme = {
   error: "#CE392F",
 };
 
-export const globalStyles = {
+export const Theme = {
   ...(colorScheme === "dark" ? DarkTheme : LightTheme),
   borderRadius: 4,
 };

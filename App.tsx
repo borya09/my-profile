@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import PublicProfile from "./src/screens/PublicProfile";
-import { globalStyles } from "./src/styles/globalStyles";
+import { Theme } from "./src/styles/theme";
 import { SpinnerProvider } from "./src/providers/SpinnerProvider";
 
 SplashScreen.preventAutoHideAsync();
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    backgroundColor: globalStyles.background,
+    backgroundColor: Theme.background,
   },
 });

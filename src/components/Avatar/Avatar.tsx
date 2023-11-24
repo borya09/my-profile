@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, StyleProp, ImageStyle, Text } from "react-native";
-import { globalStyles } from "../../styles/globalStyles";
+import { Theme } from "../../styles/theme";
 import Animated, {
   withSpring,
   useSharedValue,
@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
     width: size,
     height: size,
     borderRadius: size / 2,
-    borderColor: globalStyles.background,
+    borderColor: Theme.background,
     borderWidth: 8,
-    backgroundColor: globalStyles.accent,
+    backgroundColor: Theme.accent,
     overflow: "hidden",
   },
   initials: {
