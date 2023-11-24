@@ -7,11 +7,13 @@ import React, {
 import { View, StyleSheet } from "react-native";
 import Spinner from "../components/Spinner";
 
-const SpinnerContext = React.createContext(
-  {} as {
-    showSpinner: () => void;
-    hideSpinner: () => void;
-  }
+type SpinnerContextType = {
+  showSpinner: () => void;
+  hideSpinner: () => void;
+};
+
+const SpinnerContext = React.createContext<SpinnerContextType>(
+  {} as SpinnerContextType
 );
 export const useSpinner = () => useContext(SpinnerContext);
 
