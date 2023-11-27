@@ -14,7 +14,7 @@ export default function PublicProfileSkills({
     <Section title="Skills">
       <View style={styles.container}>
         {skills.map((s) => (
-          <Badge key={s}>{s}1</Badge>
+          <Badge key={s}>{s}</Badge>
         ))}
       </View>
     </Section>
