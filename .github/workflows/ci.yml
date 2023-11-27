@@ -27,7 +27,7 @@ jobs:
     - name: 🛡️ Lint
       run: npm run lint   
     - name: 🛡️ Run tests
-      run: npm run test:ci
+      run: npm test
     - name: 📁 Upload tests report
       uses: actions/upload-artifact@v3
       if: always()
