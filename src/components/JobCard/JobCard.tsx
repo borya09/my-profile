@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleProp, StyleSheet, TextStyle, View } from "react-native";
+import { StyleProp, StyleSheet, ViewStyle, View } from "react-native";
 import { Job } from "../../models/Job";
 import Text from "../../components/Text";
 
 interface JobCardProps {
   job: Job;
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<ViewStyle>;
 }
 
 export default function JobCard({ job, style }: JobCardProps) {

@@ -1,10 +1,14 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleProp, ViewStyle, StyleSheet, View } from "react-native";
 
-export default function Spinner() {
+interface SpinnerProps {
+  style?: StyleProp<ViewStyle>;
+}
+
+export default function Spinner({ style }: SpinnerProps) {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator size="large" style={styles.spinner} />
+    <View style={[styles.container, style]}>
+      <ActivityIndicator size="large" />
       <View style={styles.overlay} />
     </View>
   );
@@ -12,19 +16,10 @@ export default function Spinner() {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    flex: 1,
+    position: "relative",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 20,
-  },
-  spinner: {
-    zIndex: 1,
   },
   overlay: {
     position: "absolute",
@@ -34,6 +29,5 @@ const styles = StyleSheet.create({
     right: 0,
     backgroundColor: "#000",
     opacity: 0.8,
-    zIndex: 2,
   },
 });

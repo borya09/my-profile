@@ -31,8 +31,8 @@ export const SpinnerProvider = ({ children }: PropsWithChildren<unknown>) => {
   return (
     <SpinnerContext.Provider value={{ showSpinner, hideSpinner }}>
       <View style={styles.container}>
-        {show && <Spinner />}
-        {children}
+        {show && <Spinner style={styles.spinner} />}
+        <View style={styles.content}>{children}</View>
       </View>
     </SpinnerContext.Provider>
   );
@@ -42,5 +42,20 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
+    position: "relative",
+    zIndex: 1,
+  },
+  spinner: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    zIndex: 2,
+    top: 0,
+    left: 0,
+  },
+  content: {
+    height: "100%",
+    position: "relative",
+    zIndex: 1,
   },
 });

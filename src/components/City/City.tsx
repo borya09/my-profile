@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, Image, ImageStyle, StyleProp, View } from "react-native";
+import { StyleSheet, Image, ViewStyle, StyleProp, View } from "react-native";
 import useFetchCityUrl from "./hooks/useFetchCityUrl";
 import { Theme } from "../../styles/theme";
 
 type CityProps = {
   city: string;
   blurRadius?: number;
-  style?: StyleProp<ImageStyle>;
+  style?: StyleProp<ViewStyle>;
 };
 
 export default function City({ city, blurRadius, style }: CityProps) {
