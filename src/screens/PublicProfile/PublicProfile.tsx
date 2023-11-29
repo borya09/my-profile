@@ -14,6 +14,8 @@ export default function PublicProfile() {
   if (error) return <Error>Error while loading public profile</Error>;
 
   if (!publicProfile) return;
+  
+  console.log("PublicProfile a");
 
   return (
     <ScrollView>
